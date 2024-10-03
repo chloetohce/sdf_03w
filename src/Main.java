@@ -1,4 +1,5 @@
 import java.io.Console;
+import java.util.Scanner;
 
 public class Main{
     public static void main(String[] args) {
@@ -12,16 +13,19 @@ public class Main{
                 System.out.println(cart.toString());
 
             } else if (input.startsWith("add")) {
-                String item = input.substring(4);
+                String items = input.substring(4);
+                Scanner s = new Scanner(items).useDelimiter(", ");
 
-                // Check if item already exists in cart
-                if (cart.contains(item)) {
-                    System.out.printf("You have %s in your cart\n", item);
-                } else {
-                cart = cart.add(item);
-                System.out.println(item + " added to cart");
+                while (s.hasNext()) {
+                    String item = s.next();
+                    if (cart.contains(item)) {
+                        System.out.printf("You have %s in your cart\n", item);
+                    } else {
+                    cart = cart.add(item);
+                    System.out.println(item + " added to cart");
+                    }
                 }
-
+                
             } else if (input.startsWith("delete")) {
                 Integer num = Integer.parseInt(input.substring(7));
                 Integer index = num - 1;
