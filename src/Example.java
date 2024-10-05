@@ -8,18 +8,17 @@ public class Example {
     
 
     public static void main(String[] args) {
+        System.out.println("Welcome to your shopping cart");
         userInput();
     }
 
     public static void menu() {
-        System.out.println("Welcome to your shopping cart");
+        
         System.out.println("===============================");
-        System.out.println();
         System.out.println("List items in the cart: enter list");
         System.out.println("Add items into the cart: enter add <items>");
         System.out.println("Delete item in the cart: enter delete <item no.>");
         System.out.println("Exit program: enter quit");
-        System.out.println();
         System.out.println("===============================");
     }
 
